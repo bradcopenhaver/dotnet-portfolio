@@ -3,7 +3,7 @@
 *@
 @{
 }
-<p>Here you can see my five most <select id="apiSort">
+<p>Here you can see my five most <select id="apiSort" name="apiSort">
     <option value="stars" selected>starred</option>
     <option value="updated">recently updated</option>
 </select> repositories on GitHub.</p>
@@ -21,12 +21,14 @@
     })
 
     function getRepos() {
+        $("#githubRepos").html("<h4>Loading . . .</h4>");
         $.ajax({
             url: "/Home/GetRepos/",
             type: "POST",
-            data: $(this).serialize(),
+            data: $("#apiSort").serialize(),
             datatype: 'json',
             success: function (result) {
+                console.log(result);
                 var htmlResult = "";
                 for (var i = 0; i < 5; i++) {
                     htmlResult += "<div class='repo-panel'><p>" + result[i].name + "</p></div>";

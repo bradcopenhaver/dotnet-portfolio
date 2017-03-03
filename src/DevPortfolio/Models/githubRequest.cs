@@ -17,6 +17,7 @@ namespace DevPortfolio.Models
         {
             RestClient client = new RestClient("https://api.github.com");
             RestRequest request = new RestRequest($"/search/repositories?q=user:bradcopenhaver&sort={sortType}", Method.GET);
+            request.AddHeader("User-Agent", "bradcopenhaver");
             RestResponse response = new RestResponse();
 
             Task.Run(async () =>

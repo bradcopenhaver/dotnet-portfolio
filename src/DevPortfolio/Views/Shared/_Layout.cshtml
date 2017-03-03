@@ -11,6 +11,23 @@
 </head>
 <body>
     <div class="container">
+        <div class="row heading">
+            <div class="col-sm-12">
+                <h2>Brad Copenhaver</h2>
+                <h4>Junior Developer</h4>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Projects", "Projects")</li>
+                <li>@Html.ActionLink("About Me", "About")</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
         @RenderBody()
     </div>
 </body>
