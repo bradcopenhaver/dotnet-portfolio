@@ -9,9 +9,10 @@
     color: saddlebrown;
 }
 img.portrait{
-    width:250px;
+    width:350px;
     height:auto;
     float:left;
+    border-radius:15px;
 }
 body {
   color: #444444;
@@ -35,6 +36,15 @@ a:hover {
 }
 .gradientInv {
   background: linear-gradient(to bottom, white, beige);
+}
+.index{
+    padding:20px 15px;
+}
+.index p{
+    font-size:14pt;
+}
+.index h6{
+    text-align:center;
 }
 .aboutme img {
   height:250px;
