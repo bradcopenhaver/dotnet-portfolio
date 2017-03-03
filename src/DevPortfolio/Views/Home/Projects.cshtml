@@ -3,19 +3,28 @@
 *@
 @{
 }
-<p>Here you can see my five most <select id="apiSort" name="apiSort">
-    <option value="stars" selected>starred</option>
-    <option value="updated">recently updated</option>
-</select> repositories on GitHub.</p>
-<div id="githubRepos">
-
+<div class="row">
+    <div class="col-sm-12">  
+        <p>Brad has written a lot of code since he started at <a href="https://www.epicodus.com">Epicodus</a>. most of it is visible on <a href="https://github.com/bradcopenhaver">his public Github</a>. </p> 
+        <form id="github">
+            <h4>
+                Brad's <input type="number" name="perPage" id="perPage" value="5" max="30" min="1" /> most <select id="apiSort" name="apiSort">
+                    <option value="stars" selected>starred</option>
+                    <option value="updated">recently updated</option>
+                </select> repositories on GitHub.
+                <button type="submit">Update</button>
+            </h4>
+        </form><hr />    
+        <div id="githubRepos"></div>        
+    </div>
 </div>
 
 <script>
     $(function () {
         getRepos();
 
-        $("#apiSort").change(function () {
+        $("#github").submit(function (event) {
+            event.preventDefault();
             getRepos();
         })
     })
@@ -25,13 +34,18 @@
         $.ajax({
             url: "/Home/GetRepos/",
             type: "POST",
-            data: $("#apiSort").serialize(),
+            data: $("#perPage, #apiSort").serialize(),
             datatype: 'json',
             success: function (result) {
                 console.log(result);
+                console.log(result.length);
                 var htmlResult = "";
-                for (var i = 0; i < 5; i++) {
-                    htmlResult += "<div class='repo-panel'><p>" + result[i].name + "</p></div>";
+                for (var i = 0; i < result.length; i++) {
+                    var description = result[i].description;
+                    if (result[i].description == null) {
+                        description = "No description available."
+                    }
+                    htmlResult += "<div class='panel repo'><h4><a href="+ result[i].url + ">" + result[i].name + "</a></h4><hr /><p>"+ description +"</div>";
                 }
                 $("#githubRepos").html(htmlResult);
             }

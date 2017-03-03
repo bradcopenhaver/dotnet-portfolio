@@ -10,24 +10,26 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row heading">
-            <div class="col-sm-12">
-                <h2>Brad Copenhaver</h2>
-                <h4>Junior Developer / UX Designer</h4>
+    <div class="gradientInv">
+        <div class="container-fluid">
+            <div class="row heading">
+                <div class="col-sm-12">
+                    <h2>Brad Copenhaver</h2>
+                    <h4>Junior Developer / UX Designer</h4>
+                </div>
             </div>
         </div>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Projects", "Projects")</li>
+                    <li>@Html.ActionLink("About Me", "About")</li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Projects", "Projects")</li>
-                <li>@Html.ActionLink("About Me", "About")</li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container gradient">
+    <div class="container-fluid gradient">
         @RenderBody()
     </div>
 </body>

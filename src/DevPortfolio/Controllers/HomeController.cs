@@ -28,9 +28,9 @@ namespace DevPortfolio.Controllers
         }
 
         [HttpPost]
-        public List<ResponseRepo.RootObject> GetRepos(string apiSort)
+        public List<ResponseRepo.RootObject> GetRepos(string apiSort, int perPage)
         {
-            return GithubRequest.getRepos(apiSort);
+            return GithubRequest.getRepos(apiSort, perPage);
         }
     }
 }

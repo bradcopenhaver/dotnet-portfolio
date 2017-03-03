@@ -6,6 +6,7 @@
 }
 .heading{
     text-align:center;
+    color: saddlebrown;
 }
 img.portrait{
     width:250px;
@@ -27,37 +28,18 @@ a:hover {
 .panel {
   padding: 10px;
   border: solid thin saddlebrown;
-}
-.intro {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.intro h1{
-  font-size: 48pt;
-}
-.intro p {
-  font-size: 18pt;
-}
-.intro img {
-  height: 235px;
-  float: left;
-}
-.projects h2{
-  text-align: center;
-  margin-top: 5px;
-}
-.projects p{
-  padding: 0px 15px 0px 15px;
-}
-.projects .panel{
-  background-color: papayawhip;
+  border-radius: 8px;
 }
 .gradient {
   background: linear-gradient(to top, white, beige);
 }
+.gradientInv {
+  background: linear-gradient(to bottom, white, beige);
+}
 .aboutme img {
   height:250px;
-  margin: 5px 0px 5px 0px;
+  margin: 10px 0px 10px 0px;
+  border-radius:15px;
 }
 .aboutme p {
   font-size: 14pt;
@@ -75,17 +57,9 @@ a:hover {
   width: 100%;
   height: auto;
 }
-.aboutme .panel {
-    border-radius: 8px;
-}
-.contributors {
-  text-align: right;
-  color: maroon;
-  margin-left: 15%;
-}
 .univ {
   font-weight: bold;
-  font-size: 18pt;
+  font-size: 16pt;
   color: darkred;
 }
 .degree {
@@ -93,10 +67,19 @@ a:hover {
   font-size: 16pt;
   color: chocolate;
 }
-.status {
-  font-style: italic;
-}
 .orange {
   color: orange;
   font-weight: bold;
+}
+.repos-heading {
+    background-color: papayawhip;
+}
+#githubRepos {
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:center;
+}
+.repo{
+    width: 250px;
+    margin: 15px;
 }

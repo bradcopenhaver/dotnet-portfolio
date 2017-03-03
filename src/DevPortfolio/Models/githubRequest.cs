@@ -13,10 +13,10 @@ namespace DevPortfolio.Models
     public class GithubRequest
     {
 
-        public static List<ResponseRepo.RootObject> getRepos(string sortType)
+        public static List<ResponseRepo.RootObject> getRepos(string sortType, int perPage)
         {
             RestClient client = new RestClient("https://api.github.com");
-            RestRequest request = new RestRequest($"/search/repositories?q=user:bradcopenhaver&sort={sortType}", Method.GET);
+            RestRequest request = new RestRequest($"/search/repositories?q=user:bradcopenhaver&sort={sortType}&per_page={perPage}", Method.GET);
             request.AddHeader("User-Agent", "bradcopenhaver");
             RestResponse response = new RestResponse();
 
