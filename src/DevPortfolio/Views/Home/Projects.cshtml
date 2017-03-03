@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<p>Here you can see my five most <select id="apiSort">
+    <option value="stars" selected>starred</option>
+    <option value="updated">recently updated</option>
+</select> repositories on GitHub.</p>
+<div id="githubRepos">
+
+</div>
+
+<script>
+    $(function () {
+        getRepos();
+
+        $("#apiSort").change(function () {
+            getRepos();
+        })
+    })
+
+    function getRepos() {
+        $.ajax({
+            url: "/Home/GetRepos/",
+            type: "POST",
+            data: $(this).serialize(),
+            datatype: 'json',
+            success: function (result) {
+                var htmlResult = "";
+                for (var i = 0; i < 5; i++) {
+                    htmlResult += "<div class='repo-panel'><p>" + result[i].name + "</p></div>";
+                }
+                $("#githubRepos").html(htmlResult);
+            }
+        });
+    }
+
+</script>
