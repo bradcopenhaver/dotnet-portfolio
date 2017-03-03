@@ -1,6 +1,4 @@
-﻿body {
-}
-.navbar-nav{
+﻿.navbar-nav{
     float:none;
     margin: 0 auto;
     display: table;
@@ -10,7 +8,95 @@
     text-align:center;
 }
 img.portrait{
-    width:25%;
+    width:250px;
     height:auto;
     float:left;
+}
+body {
+  color: #444444;
+}
+strong {
+  color: orange;
+}
+a {
+  color: darkred;
+}
+a:hover {
+  color: indianred;
+}
+.panel {
+  padding: 10px;
+  border: solid thin saddlebrown;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.intro h1{
+  font-size: 48pt;
+}
+.intro p {
+  font-size: 18pt;
+}
+.intro img {
+  height: 235px;
+  float: left;
+}
+.projects h2{
+  text-align: center;
+  margin-top: 5px;
+}
+.projects p{
+  padding: 0px 15px 0px 15px;
+}
+.projects .panel{
+  background-color: papayawhip;
+}
+.gradient {
+  background: linear-gradient(to top, white, beige);
+}
+.aboutme img {
+  height:250px;
+  margin: 5px 0px 5px 0px;
+}
+.aboutme p {
+  font-size: 14pt;
+}
+.aboutme h3 {
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bolder;
+}
+.aboutme strong {
+  font-size: 16pt;
+  color:brown;
+}
+.aboutme .panel img {
+  width: 100%;
+  height: auto;
+}
+.aboutme .panel {
+    border-radius: 8px;
+}
+.contributors {
+  text-align: right;
+  color: maroon;
+  margin-left: 15%;
+}
+.univ {
+  font-weight: bold;
+  font-size: 18pt;
+  color: darkred;
+}
+.degree {
+  font-weight: bold;
+  font-size: 16pt;
+  color: chocolate;
+}
+.status {
+  font-style: italic;
+}
+.orange {
+  color: orange;
+  font-weight: bold;
 }
