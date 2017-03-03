@@ -9,3 +9,8 @@
 .heading{
     text-align:center;
 }
+img.portrait{
+    width:25%;
+    height:auto;
+    float:left;
+}
