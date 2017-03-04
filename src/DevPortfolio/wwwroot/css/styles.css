@@ -92,4 +92,10 @@ a:hover {
 .repo{
     width: 250px;
     margin: 15px;
+    padding: 15px;
+}
+hr{
+    border-color:brown;
+    background-color:brown;
+    color:brown;
 }

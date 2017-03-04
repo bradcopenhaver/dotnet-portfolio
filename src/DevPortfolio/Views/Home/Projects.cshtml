@@ -4,8 +4,8 @@
 @{
 }
 <div class="row">
-    <div class="col-sm-12">  
-        <p>Brad has written a lot of code since he started at <a href="https://www.epicodus.com">Epicodus</a>. most of it is visible on <a href="https://github.com/bradcopenhaver">his public Github</a>. </p> 
+    <div class="col-sm-12">
+        <h4>Brad has written a lot of code since he started at <a href="https://www.epicodus.com">Epicodus</a>. Most of it is visible on <a href="https://github.com/bradcopenhaver">his public Github</a>. The languages he focused on at Epicodus were Javascript and C# using the .NET Core framework. Most of his web apps use an MVC framework.</h4> <hr />
         <form id="github">
             <h4>
                 Brad's <input type="number" name="perPage" id="perPage" value="5" max="30" min="1" /> most <select id="apiSort" name="apiSort">
@@ -14,7 +14,7 @@
                 </select> repositories on GitHub.
                 <button type="submit">Update</button>
             </h4>
-        </form><hr />    
+        </form>    
         <div id="githubRepos"></div>        
     </div>
 </div>
@@ -37,15 +37,13 @@
             data: $("#perPage, #apiSort").serialize(),
             datatype: 'json',
             success: function (result) {
-                console.log(result);
-                console.log(result.length);
                 var htmlResult = "";
                 for (var i = 0; i < result.length; i++) {
                     var description = result[i].description;
                     if (result[i].description == null) {
                         description = "No description available."
                     }
-                    htmlResult += "<div class='panel repo'><h4><a href="+ result[i].url + ">" + result[i].name + "</a></h4><hr /><p>"+ description +"</div>";
+                    htmlResult += "<div class='panel repo'><h4><a href="+ result[i].html_url + ">" + result[i].name + "</a></h4><hr /><p>"+ description +"</div>";
                 }
                 $("#githubRepos").html(htmlResult);
             }
